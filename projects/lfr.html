@@ -1,0 +1,66 @@
+---
+layout: showcase
+title: Line Follower Robot
+meta:  
+source:
+--- 
+
+<p6>A line follower robot is one of the simple robots that one use to start as their interest.
+It is a simple robot that can follow a colored line on a smooth surface of different color.
+<br></p6>
+<h1> The paths can be like some shown below:</h1>
+</p6>
+		  	   				  		<!--<section>
+										<img src="{{site.baseurl}}/images/pic02.jpg" class="image featured" alt="" />
+										<header>
+											<h3>A simple path</h3>
+										</header>
+									</section>-->
+							<div class="row">
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="{{site.baseurl}}/images/simple.png" alt="" /></a>
+										<header>
+											<h3>A simple path</h3>
+										</header>
+									</section>
+
+								</div>
+								<div class="6u 12u(narrower)">
+
+									<section>
+										<a href="#" class="image featured"><img src="{{site.baseurl}}/images/tricky.jpg" alt="" /></a>
+										<header>
+											<h3>A Tricky Path</h3>
+										</header>
+									</section>
+								</div>
+							</div>
+							<div class="row">
+								<div class="6u 12u(narrower)">
+									<section>
+										<a href="#" class="image featured"><img src="{{site.baseurl}}/images/bw.png" alt="" /></a>
+										<header>
+											<h3>Wite Line on Black Background</h3>
+										</header>
+									</section>
+								</div>
+								<div class="6u 12u(narrower)">
+									<section>
+										<a href="#" class="image featured"><img src="{{site.baseurl}}/images/complex.jpg" alt="" /></a>
+										<header>
+											<h3>A Complex Path</h3>
+										</header>
+									</section>
+								</div>
+							</div>
+							
+<h4>So, a line follower robot works as follows:</h4>									
+<ul style="list-style-type:square;">
+	<li><p6>The IR-sensors can detect difference between the light and dark colour(for our case it was white surface and black line on it), and are powered from the controller board.</p6></li>
+	<li><p6>The controller board continuously reads the analog input from the IR-sensors and knows about the position of the robot by knowing the readings of differently positioned sensors.</p6></li>
+	<li><p6>The controller then decides which direction it should choose and accordingly sends the PWM signals to the motor driver circuit which makes the bot to follow the line.</p6></li>
+</ul>
+
+<img src="/images/LFRblock.png">

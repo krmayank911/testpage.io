@@ -1,0 +1,16 @@
+---
+lauout: showcase
+title: Projects
+meta:
+---
+
+
+<ul>
+	{% for projectpage in site.posts limit:1 %}
+	<li>
+	<h2>{{projectpage.title}}</h2>
+	<p>{{projectpage.meta}}</p>
+	<p1>{{projectpage.content}}<p1>
+	</li>
+	{% endfor %}
+</ul>

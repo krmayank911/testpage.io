@@ -1,0 +1,16 @@
+baseurl: /testpage.io
+exclude: [READMY.md]
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+source:       .
+destination: ./_site
+layouts_dir: ./_layouts
+includes_dir: ./_includes
+sass_dir: ./_css
+plugins_dir: ./_plugins
+data_dir: ./_data
+collections: null
