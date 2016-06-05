@@ -1,5 +1,62 @@
 ---
-layout: showcase
+layout: bootload_layout
 title: Bootload Your Raw Arduino IC
 meta: Bootload your own ATmega 328p
 ---
+<p>Burning bootloader onto a raw ATmega328P can be tricky sometimes depending upon the version you buy from the market.
+ In the market there are two variants available ATmega328-PU and ATmega328P-PU you can find it on your 
+ IC just take a closer look.
+</p>
+<br>
+<p><b>First of all what is a bootloader?</b>
+<br>
+It is basically a program that resides in a microcontroller chip that manages 
+the upload of your sketches onto the IC. It is basically the operating system of the IC.
+<br>
+</p>
+
+<h3>Here what you need to do if you have a ATmega328-PU:</h3>
+
+<ul style="list-style-type:square;">
+	<li><p6>First find the avrdude.conf in C:\ProgramFiles\arduino\hardware\tools\ avrdude.conf.</p6></li>
+	<li><p6>Copy this file at a safe place(as it will be used for bootloading ATmega328P-PU).</p6></li>
+	<li><p6>Open this file in wordpad and find the signature:
+		<b>0x1e 0x95 0x0F</b> (for ATmega328P-PU) and change it with <b>0x1e 0x95 0x14</b> (for ATmega328-PU).</p6></li>
+	<li><p6>Save it and use it for bootloading the ATmega32-PU.</p6></li>
+</ul>
+<p6>
+<b>Note:</b> If you want to bootload simply ATmega328P-PU,
+ there is no need to change the above file and you can directly proceed for the connections.
+ <br>
+ <br>
+ </p6>
+ <h3>Connections of ATmega328 IC with Arduino Uno:</h3>
+</p6>
+<ul style="list-style-type:square;">
+	<li>UNO 5V —> ATmega328 pin 7 (VCC)</li>
+	<li>UNO GND —> ATmega328 pin 8 (GND)</li>
+	<li>UNO pin 10 —> ATmega328 pin 1 (RESET)</li>
+	<li>UNO pin 11 —> ATmega328 pin 17 (MOSI)</li>
+	<li>UNO pin 12 —> ATmega328 pin 18 (MISO)</li>
+	<li>UNO pin 13 —> ATmega328 pin 19 (SCK)</li>
+</ul>
+<h3>Additional Components</h3>
+<ul style="list-style-type:square;">
+	<li>A 16 MHz crystal</li>
+	<li>A 10k resistor, and</li>
+	<li>Two 18 to 22 picofarad (ceramic) capacitors.</li>
+</ul>
+<p><b>Note:</b> additional circuitery can be avoided, to know more visit
+<a href="https://www.arduino.cc/en/Tutorial/ArduinoToBreadboard">Arduino.cc</a>
+<p>
+<h3>Circuit:</h3>
+<img src="{{site.baseurl}}/images/BreadboardAVR.png" style="margin-left:3em;">
+<h3>In the Arduino IDE:</h3>
+<ul style="list-style-type:square;">
+	<li><p6>Upload the Arduino ISP program from the Example onto the Uno board.</p6></li>
+	<li><p6>Exchange the files.</p6></li>
+	<li><p6>Select the Correct Board and Serial Port from the tool menu.</p6></li>
+	<li><p6>Select the programmer ->Arduino as ISP in the tools menu.</p6></li>
+	<li><p6>Click on the burn Bootloader in the tools menu.</p6></li>
+</ul>
+<p>And thats it. Your IC is now bootloaded.</p>
